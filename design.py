@@ -1,0 +1,75 @@
+import turtle
+
+
+def gui():
+    # Create screen and turtle
+    screen = turtle.Screen()
+    screen.title("Grapher Menu")
+    screen.setup(width=500, height=400)
+    screen.bgcolor("grey")
+    design = turtle.Turtle()
+    design.shape("square")
+    design.color("yellow")
+    design.shapesize(stretch_wid=70, stretch_len=20)
+    design.penup()
+    design.goto(250,0)
+    design1 = turtle.Turtle()
+    design1.shape("square")
+    design1.color("black")
+    design1.shapesize(stretch_wid=7, stretch_len=70)
+    design1.penup()
+    design1.goto(0,200)
+    pen = turtle.Turtle()
+    pen.color("white")
+    pen.penup()
+    pen.hideturtle()
+    pen.goto(0, 145)
+    pen.write("Grapher" , align="center", font=("Blackadder ITC", 32, "normal"))
+    pen1 = turtle.Turtle()
+    pen1.color("black")
+    pen1.penup()
+    pen1.hideturtle()
+    pen1.goto(60, -185)
+    pen1.write("Developer: INAM UR REHMAN" , align="left", font=("Time New Romans", 10, "normal"))
+    pen2 = turtle.Turtle()
+    pen2.color("black")
+    pen2.penup()
+    pen2.hideturtle()
+    pen2.goto(105, 90)
+    pen2.write("Instructions:" , align="center", font=("Time New Romans", 12, "normal"))
+    pen2.goto(100, 70)
+    pen2.write("Enter the path of" , align="left", font=("Time New Romans", 10, "normal"))
+    pen2.goto(100, 50)
+    pen2.write("SpreadSheet to plot" , align="left", font=("Time New Romans", 10, "normal"))
+    pen2.goto(100, 30)
+    pen2.write("data" , align="left", font=("Time New Romans", 10, "normal"))
+    pen2.goto(100, 0)
+    pen2.write("OR use the Default" , align="left", font=("Time New Romans", 10, "normal"))
+    pen2.goto(100, -20)
+    pen2.write("Graph_ploter.csv file" , align="left", font=("Time New Romans", 10, "normal"))
+    pen2.goto(100,-40)
+    pen2.write("for plotting data" , align="left", font=("Time New Romans", 10, "normal"))
+    t = turtle.Turtle()
+    t.hideturtle()
+    t.penup()
+
+    # Ask user for name
+    x_unit = turtle.textinput("X_unit", "Enter X axis Units:")
+    y_unit = turtle.textinput("Y_unit", "Enter Y axis Units:")
+    header = turtle.textinput("Title", "Enter Title of Graph:")
+    path = turtle.textinput("Path","Enter path of CSV File")
+    default_path = 'Graph_ploter.csv'
+
+    t.goto(-220, 70)
+    t.write(f"X_Axis: {x_unit}", align="left", font=("Arial", 16, "normal"))
+    t.goto(-220,10)
+    t.write(f"Y_Axis: {y_unit}", align="left", font=("Arial", 16, "normal"))
+    t.goto(-220,-50)
+    t.write(f"Title: {header}", align="left", font=("Arial", 16, "normal"))
+    if path == None:
+        path=default_path
+    t.goto(-220,-110)
+    t.write(f"Path: {path}", align="left", font=("Arial", 16, "normal"))
+    return x_unit, y_unit, header, path
+
+
